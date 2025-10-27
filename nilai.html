@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LMS - Nilai</title>
+
+  <!-- ✅ CSS INTERNAL -->
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f6fa;
+    }
+
+    .app {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 230px;
+      background: #1e2a38;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .nav a {
+      color: #cfd9e3;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #007bff;
+      color: #fff;
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .topbar {
+      background: #ffffff;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin-bottom: 25px;
+    }
+
+    .topbar h2 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #333;
+    }
+
+    /* Bagian nilai */
+    .grade-section {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .grade-section p {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      border-radius: 10px;
+    }
+
+    .grade-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .grade-table th {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      font-weight: 600;
+    }
+
+    .grade-table td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .grade-table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    .summary {
+      background: #f5f9ff;
+      border-left: 5px solid #007bff;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .summary span {
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .app {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .nav {
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .nav a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">LMS</div>
+      <nav class="nav">
+        <a href="index.html">Halaman Utama</a>
+        <a href="halaman tugas.html">Tugas</a>
+        <a href="nilai.html" class="active">Nilai</a>
+        <a href="evaluasi.html">Evaluasi</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <h2>📈 Nilai Pembelajaran</h2>
+      </header>
+
+      <section class="grade-section">
+        <p>Berikut hasil penilaian dari setiap materi dan tugas Anda:</p>
+
+        <div class="table-container">
+          <table class="grade-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Mata Kuliah / Materi</th>
+                <th>Tugas</th>
+                <th>Kuis</th>
+                <th>Evaluasi</th>
+                <th>Nilai Akhir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Etika Penggunaan Teknologi Informasi</td>
+                <td>90</td>
+                <td>85</td>
+                <td>88</td>
+                <td class="final-score">—</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Keamanan Data dan Privasi Internet</td>
+                <td>88</td>
+                <td>92</td>
+                <td>90</td>
+                <td class="final-score">—</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Pengantar Desain Digital</td>
+                <td>95</td>
+                <td>90</td>
+                <td>93</td>
+                <td class="final-score">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="summary">
+          <p><strong>Rata-rata Nilai:</strong> <span id="average-score">-</span></p>
+          <p><strong>Status:</strong> <span id="status">Menunggu...</span></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ✅ Script hitung nilai otomatis -->
+  <script>
+    const rows = document.querySelectorAll(".grade-table tbody tr");
+    let total = 0;
+
+    rows.forEach(row => {
+      const tds = row.querySelectorAll("td");
+      const tugas = parseFloat(tds[2].textContent);
+      const kuis = parseFloat(tds[3].textContent);
+      const eval = parseFloat(tds[4].textContent);
+      const final = ((tugas + kuis + eval) / 3).toFixed(2);
+      tds[5].textContent = final;
+      total += parseFloat(final);
+    });
+
+    const average = (total / rows.length).toFixed(2);
+    document.getElementById("average-score").textContent = average;
+    document.getElementById("status").textContent =
+      average >= 85 ? "✅ Lulus dengan sangat baik" :
+      average >= 75 ? "🟩 Lulus" :
+      "❌ Perlu perbaikan";
+  </script>
+</body>
+</html>

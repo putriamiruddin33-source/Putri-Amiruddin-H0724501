@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengantar Desain Pembelajaran Digital</title>
+  <link rel="stylesheet" href="style-css/style1.css" />
+  <style>
+    /* ==== Tambahan gaya kuis ==== */
+    .quiz-section {
+      margin-top: 2rem;
+      background: #f8fafc;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    .quiz-section h2 {
+      margin-bottom: 15px;
+    }
+    .quiz-question {
+      margin-bottom: 20px;
+    }
+    .quiz-question p {
+      font-weight: 600;
+    }
+    .quiz-option {
+      display: block;
+      margin: 5px 0;
+    }
+    .quiz-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+    .quiz-btn:hover {
+      background: #0056b3;
+    }
+    #quiz-result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="materi-page fade-in">
+    <header class="header">
+      <h1>Pengantar Desain Pembelajaran Digital</h1>
+      <p class="subhead">Mata Kuliah: Pengembangan E-Learning</p>
+    </header>
+
+    <!-- Tujuan Pembelajaran -->
+    <section class="card">
+      <h2>🎯 Tujuan Pembelajaran</h2>
+      <ul>
+        <li>Mahasiswa memahami konsep dasar desain pembelajaran digital.</li>
+        <li>Mahasiswa mampu merancang pengalaman belajar yang menarik dan interaktif.</li>
+        <li>Mahasiswa dapat mengintegrasikan media digital ke dalam proses pembelajaran.</li>
+        <li>Mahasiswa menyadari pentingnya prinsip pedagogik dalam e-learning modern.</li>
+      </ul>
+    </section>
+
+    <!-- CPMK & Indikator -->
+    <section class="card">
+      <h2>📊 CPMK & Indikator</h2>
+      <p><strong>CPMK:</strong> Mahasiswa mampu menjelaskan, menganalisis, dan merancang desain pembelajaran digital yang efektif, inovatif, dan sesuai dengan kebutuhan peserta didik.</p>
+      <p><strong>Indikator Keberhasilan:</strong></p>
+      <ul>
+        <li>Dapat menjelaskan komponen utama dalam desain pembelajaran digital.</li>
+        <li>Mampu mengidentifikasi kebutuhan dan karakteristik peserta didik.</li>
+        <li>Dapat membuat rancangan sederhana menggunakan model desain pembelajaran seperti ADDIE.</li>
+      </ul>
+    </section>
+
+    <!-- Materi Lengkap -->
+    <section class="card">
+      <h2>📚 Materi: Pengantar Desain Pembelajaran Digital</h2>
+
+      <p>
+        Desain pembelajaran digital adalah proses sistematis dalam merancang, mengembangkan, dan mengimplementasikan pengalaman belajar dengan memanfaatkan teknologi digital. Tujuannya adalah menciptakan lingkungan belajar yang menarik, efektif, dan efisien.
+      </p>
+
+      <p>
+        Dalam era digital, peran pendidik tidak lagi hanya sebagai penyampai informasi, tetapi juga sebagai desainer pengalaman belajar. Desain pembelajaran digital menekankan bagaimana teknologi dapat digunakan untuk mendukung interaksi, kolaborasi, dan partisipasi aktif peserta didik.
+      </p>
+
+      <p>
+        Salah satu pendekatan yang banyak digunakan adalah model <strong>ADDIE</strong> (Analysis, Design, Development, Implementation, Evaluation), yang membantu merancang dan menilai efektivitas setiap langkah dalam pembuatan materi digital.
+      </p>
+
+      <p>
+        Desain pembelajaran digital juga menekankan prinsip instruksional seperti kesesuaian tujuan, media relevan, dan penyajian konten yang mudah dipahami. UI/UX (User Interface dan User Experience) juga penting untuk mendukung motivasi belajar.
+      </p>
+
+      <p>
+        Pembelajaran digital dapat memanfaatkan berbagai platform seperti LMS, video conference, aplikasi kuis interaktif, dan media sosial. Prinsip inklusivitas dan aksesibilitas juga wajib diperhatikan agar semua peserta didik dapat mengakses materi secara adil.
+      </p>
+
+      <p class="highlight">
+        Kesimpulan: Desain pembelajaran digital bukan sekadar teknologi, tetapi seni menciptakan pengalaman belajar yang bermakna, manusiawi, dan memberdayakan.
+      </p>
+    </section>
+
+    <!-- Modul & Video -->
+    <section class="card">
+      <h2>💻 Konten Digital Interaktif</h2>
+      <div class="pdf-viewer">
+        <embed src="modul/Pembelajaran Digital.pdf" type="application/pdf" width="100%" height="600px">
+      </div>
+
+      <h2>🎬 Video Pembelajaran</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/fiuhu924--M" title="Video Pembelajaran Digital" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- 🧠 Kuis Interaktif -->
+    <section class="card quiz-section">
+      <h2>🧩 Kuis Pemahaman Materi</h2>
+
+      <form id="quiz-form">
+        <div class="quiz-question">
+          <p>1. Apa tujuan utama dari desain pembelajaran digital?</p>
+          <label class="quiz-option"><input type="radio" name="q1" value="a"> Menyampaikan informasi sebanyak mungkin.</label>
+          <label class="quiz-option"><input type="radio" name="q1" value="b"> Menciptakan pengalaman belajar yang menarik dan efektif.</label>
+          <label class="quiz-option"><input type="radio" name="q1" value="c"> Menggantikan peran guru sepenuhnya.</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>2. Model ADDIE terdiri dari tahapan apa saja?</p>
+          <label class="quiz-option"><input type="radio" name="q2" value="a"> Analysis, Design, Development, Implementation, Evaluation</label>
+          <label class="quiz-option"><input type="radio" name="q2" value="b"> Action, Design, Deliver, Improve, Evaluate</label>
+          <label class="quiz-option"><input type="radio" name="q2" value="c"> Analyze, Develop, Deploy, Inspect, Edit</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>3. Mengapa prinsip UI/UX penting dalam pembelajaran digital?</p>
+          <label class="quiz-option"><input type="radio" name="q3" value="a"> Agar tampilan menarik dan mudah digunakan peserta didik.</label>
+          <label class="quiz-option"><input type="radio" name="q3" value="b"> Supaya aplikasi lebih berat dijalankan.</label>
+          <label class="quiz-option"><input type="radio" name="q3" value="c"> Karena UI/UX hanya tren desain modern.</label>
+        </div>
+
+        <button type="button" class="quiz-btn" onclick="checkQuiz()">Kirim Jawaban</button>
+      </form>
+
+      <div id="quiz-result"></div>
+    </section>
+
+    <!-- Navigasi -->
+    <footer class="footer-nav">
+      <a href="index.html">⬅️ Kembali</a>
+    </footer>
+  </main>
+
+  <script>
+    function checkQuiz() {
+      const answers = { q1: "b", q2: "a", q3: "a" };
+      let score = 0;
+      const form = document.forms["quiz-form"];
+
+      for (const q in answers) {
+        if (form[q].value === answers[q]) score++;
+      }
+
+      const result = document.getElementById("quiz-result");
+      result.innerHTML = `Skor Anda: <strong>${score}/3</strong><br>` +
+        (score === 3
+          ? "🎉 Hebat! Anda memahami materi dengan sangat baik."
+          : score === 2
+          ? "👍 Bagus! Coba pelajari sedikit lagi."
+          : "📘 Ayo baca kembali materi agar lebih paham.");
+    }
+  </script>
+</body>
+</html>

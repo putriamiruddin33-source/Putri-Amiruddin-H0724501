@@ -1,0 +1,162 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Layout utama */
+.app {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f6fa;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  background: #1e2a38;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+}
+
+.logo {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: #2f3e52;
+  color: #fff;
+}
+
+/* Main */
+.main {
+  margin-left: 230px;
+  flex: 1;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f6fa;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.topbar h2 {
+  font-size: 1.4em;
+  color: #222;
+}
+
+.topbar input {
+  padding: 10px 15px;
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* Cards Section */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.thumb {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.meta {
+  padding: 20px;
+}
+
+.meta h3 {
+  font-size: 1.1em;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.meta p {
+  color: #555;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #3a6ff7;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #1e52d3;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .main {
+    margin-left: 180px;
+    padding: 20px;
+  }
+
+  .topbar input {
+    width: 180px;
+  }
+}

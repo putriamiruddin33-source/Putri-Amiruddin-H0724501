@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LMS</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f4f6fa;
+    }
+
+    .app {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 230px;
+      background: #1e2a38;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      position: fixed;
+      height: 100%;
+    }
+
+    .logo {
+      font-size: 1.6em;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1em;
+      padding: 10px;
+      border-radius: 8px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #2f3e52;
+      color: #fff;
+    }
+
+    /* Main */
+    .main {
+      margin-left: 230px;
+      flex: 1;
+      padding: 30px 40px;
+      display: flex;
+      flex-direction: column;
+      background-color: #f4f6fa;
+    }
+
+    .topbar {
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .topbar h2 {
+      font-size: 1.4em;
+      color: #222;
+    }
+
+    .topbar input {
+      padding: 10px 15px;
+      width: 250px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 10px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .thumb-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .meta {
+      padding: 20px;
+    }
+
+    .meta h3 {
+      font-size: 1.1em;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .meta p {
+      color: #555;
+      font-size: 0.95em;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #3a6ff7;
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #1e52d3;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    th,
+    td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: #e0e7ff;
+      color: #1e3a8a;
+    }
+
+    td {
+      background: #fff;
+    }
+
+    .status {
+      font-weight: bold;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .btn-upload {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-upload:hover {
+      background: #1d4ed8;
+    }
+
+    /* Evaluasi form */
+    .form-evaluasi {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      max-width: 700px;
+    }
+
+    .form-evaluasi h3 {
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .form-evaluasi label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .form-evaluasi textarea,
+    .form-evaluasi select {
+      width: 100%;
+      margin-top: 5px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .form-evaluasi button {
+      margin-top: 15px;
+      background: #3b82f6;
+      border: none;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      width: 400px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .close {
+      float: right;
+      cursor: pointer;
+      font-size: 20px;
+      color: #555;
+    }
+
+    /* Page visibility */
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 180px;
+      }
+
+      .main {
+        margin-left: 180px;
+        padding: 20px;
+      }
+
+      .topbar input {
+        width: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">LMS</div>
+      <nav class="nav">
+        <a id="nav-home" class="active">Halaman Utama</a>
+        <a id="nav-tugas">Tugas</a>
+        <a id="nav-nilai">Nilai</a>
+        <a id="nav-evaluasi">Evaluasi</a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+      <header class="topbar">
+        <h2 id="page-title">📚 Daftar Kursus</h2>
+        <input type="text" id="search" placeholder="Cari kursus..." />
+      </header>
+
+      <!-- Halaman Utama -->
+      <section class="page active" id="home">
+        <div class="cards">
+          <article class="card">
+            <img src="gambar/WhatsApp Image 2025-10-22 at 15.39.04.jpeg" class="thumb-img">
+            <div class="meta">
+              <h3>Etika Penggunaan Teknologi Informasi</h3>
+              <p>Mempelajari etika dan tanggung jawab dalam penggunaan TI di dunia digital.</p>
+              <a href="etika.html" class="btn">Buka Materi</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="gambar/WhatsApp Image 2025-10-22 at 15.42.44.jpeg" class="thumb-img">
+            <div class="meta">
+              <h3>Keamanan Data dan Privasi Internet</h3>
+              <p>Memahami cara melindungi data pribadi dan menjaga privasi online.</p>
+              <a href="keamanan.html" class="btn">Buka Materi</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="gambar/WhatsApp Image 2025-10-22 at 15.44.18.jpeg" class="thumb-img">
+            <div class="meta">
+              <h3>Pengantar Desain Digital</h3>
+              <p>Mengenal dasar desain visual dan media pembelajaran digital.</p>
+              <a href="pengantar.html" class="btn">Buka Materi</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Halaman Tugas -->
+      <section class="page" id="tugas">
+        <h2>📘 Daftar Tugas</h2><br>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama Tugas</th>
+              <th>Batas Waktu</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Tugas Etika Penggunaan TI</td>
+              <td>30 Oktober 2025</td>
+              <td class="status" style="color: orange;">Belum dikumpulkan</td>
+              <td>
+                <button class="btn-upload" onclick="lihatSoal(1)">Lihat Soal</button>
+                <label class="btn-upload">
+                  Kumpulkan
+                  <input type="file" onchange="kumpulkan(this)">
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Keamanan Data & Privasi</td>
+              <td>2 November 2025</td>
+              <td class="status" style="color: orange;">Belum dikumpulkan</td>
+              <td>
+                <button class="btn-upload" onclick="lihatSoal(2)">Lihat Soal</button>
+                <label class="btn-upload">
+                  Kumpulkan
+                  <input type="file" onchange="kumpulkan(this)">
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Pengantar Desain Digital</td>
+              <td>5 November 2025</td>
+              <td class="status" style="color: orange;">Belum dikumpulkan</td>
+              <td>
+                <button class="btn-upload" onclick="lihatSoal(3)">Lihat Soal</button>
+                <label class="btn-upload">
+                  Kumpulkan
+                  <input type="file" onchange="kumpulkan(this)">
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Halaman Nilai -->
+      <section class="page" id="nilai">
+        <h2>📊 Nilai Siswa</h2><br>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama Tugas</th>
+              <th>Nilai</th>
+              <th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Tugas Etika Penggunaan TI</td><td>85</td><td>Baik</td></tr>
+            <tr><td>2</td><td>Keamanan Data & Privasi</td><td>90</td><td>Sangat Baik</td></tr>
+            <tr><td>3</td><td>Pengantar Desain Digital</td><td>88</td><td>Baik</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Halaman Evaluasi -->
+      <section class="page" id="evaluasi">
+        <div class="form-evaluasi">
+          <h3>📝 Form Evaluasi Pembelajaran</h3>
+          <label>Bagaimana pemahaman Anda terhadap materi?</label>
+          <select>
+            <option>Sangat Paham</option>
+            <option>Cukup Paham</option>
+            <option>Kurang Paham</option>
+          </select>
+          <label>Komentar atau saran:</label>
+          <textarea rows="4" placeholder="Tulis pendapat Anda di sini..."></textarea>
+          <button>Kirim Evaluasi</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal Soal -->
+  <div id="modalSoal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="tutupModal()">&times;</span>
+      <h3 id="judulSoal"></h3>
+      <p id="isiSoal"></p>
+    </div>
+  </div>
+
+  <script>
+    const navLinks = document.querySelectorAll(".nav a");
+    const pages = document.querySelectorAll(".page");
+    const title = document.getElementById("page-title");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.forEach(a => a.classList.remove("active"));
+        link.classList.add("active");
+
+        pages.forEach(p => p.classList.remove("active"));
+        document.getElementById(link.id.replace("nav-", "")).classList.add("active");
+
+        title.textContent = link.textContent;
+      });
+    });
+
+    function lihatSoal(no) {
+      const modal = document.getElementById("modalSoal");
+      const judul = document.getElementById("judulSoal");
+      const isi = document.getElementById("isiSoal");
+
+      const soal = [
+        "Jelaskan pentingnya etika dalam penggunaan teknologi informasi!",
+        "Apa saja cara melindungi data pribadi di internet?",
+        "Jelaskan unsur-unsur penting dalam desain digital!"
+      ];
+
+      judul.textContent = "Soal Tugas " + no;
+      isi.textContent = soal[no - 1];
+      modal.style.display = "flex";
+    }
+
+    function tutupModal() {
+      document.getElementById("modalSoal").style.display = "none";
+    }
+
+    function kumpulkan(input) {
+      alert("Tugas berhasil dikumpulkan: " + input.files[0].name);
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById("modalSoal");
+      if (event.target === modal) modal.style.display = "none";
+    };
+  </script>
+
+</body>
+</html>

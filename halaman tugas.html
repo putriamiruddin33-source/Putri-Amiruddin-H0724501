@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Tugas - Sistem Informasi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #e0e7ff;
+      color: #1e3a8a;
+    }
+
+    .btn {
+      background-color: #1e40af;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .status {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Daftar Tugas Sistem Informasi</h1>
+</header>
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama Tugas</th>
+        <th>Batas Waktu</th>
+        <th>Status</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="tugas1">
+        <td>1</td>
+        <td>Tugas Etika Penggunaan TI</td>
+        <td>30 Oktober 2025</td>
+        <td class="status" style="color: orange;">Belum dikumpulkan</td>
+        <td>
+          <label class="btn">
+            Kumpulkan
+            <input type="file" onchange="kumpulkan(1, this)">
+          </label>
+        </td>
+      </tr>
+      <tr id="tugas2">
+        <td>2</td>
+        <td>Keamanan Data & Privasi</td>
+        <td>2 November 2025</td>
+        <td class="status" style="color: orange;">Belum dikumpulkan</td>
+        <td>
+          <label class="btn">
+            Kumpulkan
+            <input type="file" onchange="kumpulkan(2, this)">
+          </label>
+        </td>
+      </tr>
+      <tr id="tugas3">
+        <td>3</td>
+        <td>Pengantar Desain Digital</td>
+        <td>5 November 2025</td>
+        <td class="status" style="color: orange;">Belum dikumpulkan</td>
+        <td>
+          <label class="btn">
+            Kumpulkan
+            <input type="file" onchange="kumpulkan(3, this)">
+          </label>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function kumpulkan(no, input) {
+    const file = input.files[0];
+    if (file) {
+      const baris = document.getElementById(`tugas${no}`);
+      const status = baris.querySelector('.status');
+      status.textContent = "Sudah dikumpulkan";
+      status.style.color = "green";
+      alert(`Tugas ${no} berhasil dikumpulkan!\nNama file: ${file.name}`);
+    }
+  }
+</script>
+
+</body>
+</html>

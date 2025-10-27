@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etika Penggunaan Teknologi Informasi</title>
+  <link rel="stylesheet" href="style-css/style1.css">
+  <style>
+    /* Tambahan gaya untuk kuis */
+    .quiz-container {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 30px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .quiz-container h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .quiz-question {
+      margin-bottom: 15px;
+    }
+
+    .quiz-question p {
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .quiz-btn {
+      background-color: #0078d7;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .quiz-btn:hover {
+      background-color: #005fa3;
+    }
+
+    #quiz-result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="materi-page fade-in">
+    <header class="header">
+      <h1>Etika Penggunaan Teknologi Informasi</h1>
+      <p class="subhead">Mata Kuliah: Pengembangan E-Learning</p>
+    </header>
+
+    <!-- Tujuan Pembelajaran -->
+    <section class="card">
+      <h2>🎯 Tujuan Pembelajaran</h2>
+      <ul>
+        <li>Mahasiswa memahami pentingnya etika dalam penggunaan teknologi informasi.</li>
+        <li>Mahasiswa mampu mengidentifikasi perilaku etis dan tidak etis dalam dunia digital.</li>
+        <li>Mahasiswa dapat menerapkan prinsip etika digital dalam aktivitas akademik dan sosial.</li>
+        <li>Mahasiswa menyadari dampak sosial, hukum, dan moral dari penggunaan teknologi.</li>
+      </ul>
+    </section>
+
+    <!-- CPMK & Indikator -->
+    <section class="card">
+      <h2>📊 CPMK & Indikator</h2>
+      <p><strong>CPMK:</strong> Mahasiswa mampu menjelaskan dan menerapkan prinsip-prinsip etika digital dalam
+        konteks penggunaan teknologi informasi secara bertanggung jawab.</p>
+      <p><strong>Indikator Keberhasilan:</strong></p>
+      <ul>
+        <li>Mampu menjelaskan konsep dasar etika teknologi informasi.</li>
+        <li>Dapat memberikan contoh pelanggaran etika di dunia digital.</li>
+        <li>Mampu menentukan solusi atau langkah etis terhadap kasus penyalahgunaan TI.</li>
+      </ul>
+    </section>
+
+    <!-- Materi -->
+    <section class="card">
+      <h2>📚 Materi: Etika Penggunaan Teknologi Informasi</h2>
+
+      <p>
+        Etika teknologi informasi merupakan seperangkat prinsip moral yang mengatur bagaimana manusia
+        menggunakan dan berinteraksi dengan teknologi secara bertanggung jawab...
+      </p>
+
+      <!-- (Materi panjang tetap seperti yang kamu punya, dipotong di sini agar singkat) -->
+    </section>
+
+    <!-- Modul dan Video -->
+    <section class="card">
+      <h2>💻 Konten Digital Interaktif</h2>
+      <div class="pdf-viewer" style="margin-top: 20px;">
+        <embed src="modul/Academy Module in Bahasa Indonesia on Information Security and Privacy.pdf" type="application/pdf"
+          width="100%" height="600px">
+      </div>
+
+      <h2>🎬 Video Pembelajaran</h2>
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/0ZMLIPydJVc"
+        title="Video Etika Penggunaan Teknologi Informasi" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <!-- 🔹 Kuis Interaktif -->
+    <section class="card quiz-container">
+      <h2>🧠 Kuis Etika Teknologi Informasi</h2>
+
+      <form id="quiz-form">
+        <div class="quiz-question">
+          <p>1. Apa tujuan utama dari etika dalam penggunaan teknologi informasi?</p>
+          <label><input type="radio" name="q1" value="a"> Membatasi kebebasan pengguna internet</label>
+          <label><input type="radio" name="q1" value="b"> Mengatur perilaku agar bertanggung jawab dalam penggunaan teknologi</label>
+          <label><input type="radio" name="q1" value="c"> Meningkatkan kemampuan teknis pengguna komputer</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>2. Manakah yang termasuk pelanggaran etika digital?</p>
+          <label><input type="radio" name="q2" value="a"> Mengutip sumber dengan benar</label>
+          <label><input type="radio" name="q2" value="b"> Menyebarkan berita palsu di media sosial</label>
+          <label><input type="radio" name="q2" value="c"> Menggunakan kata-kata sopan di dunia maya</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>3. Mengapa menjaga privasi data pribadi penting?</p>
+          <label><input type="radio" name="q3" value="a"> Agar data dapat dijual untuk keuntungan</label>
+          <label><input type="radio" name="q3" value="b"> Untuk mencegah penyalahgunaan oleh pihak tidak bertanggung jawab</label>
+          <label><input type="radio" name="q3" value="c"> Supaya dapat diakses oleh semua orang</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>4. Apa sikap etis dalam membuat tugas akademik?</p>
+          <label><input type="radio" name="q4" value="a"> Menyalin karya orang lain tanpa izin</label>
+          <label><input type="radio" name="q4" value="b"> Mengutip sumber referensi dengan benar</label>
+          <label><input type="radio" name="q4" value="c"> Menggunakan AI tanpa mencantumkan sumber</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>5. Contoh perilaku tidak etis di media sosial adalah...</p>
+          <label><input type="radio" name="q5" value="a"> Menyebarkan ujaran kebencian</label>
+          <label><input type="radio" name="q5" value="b"> Menghormati privasi orang lain</label>
+          <label><input type="radio" name="q5" value="c"> Menyampaikan kritik secara sopan</label>
+        </div>
+
+        <button type="button" class="quiz-btn" onclick="cekJawaban()">Kirim Jawaban</button>
+      </form>
+
+      <div id="quiz-result"></div>
+    </section>
+
+    <!-- Navigasi -->
+    <footer class="footer-nav">
+      <a href="index.html">Kembali</a>
+    </footer>
+  </main>
+
+  <script src="script-js/script1.js"></script>
+
+  <script>
+    function cekJawaban() {
+      const kunci = {
+        q1: "b",
+        q2: "b",
+        q3: "b",
+        q4: "b",
+        q5: "a"
+      };
+      let skor = 0;
+      let total = 5;
+      for (let no in kunci) {
+        const jawaban = document.querySelector(`input[name="${no}"]:checked`);
+        if (jawaban && jawaban.value === kunci[no]) {
+          skor++;
+        }
+      }
+      const hasil = document.getElementById("quiz-result");
+      hasil.innerHTML = `Nilai Anda: <strong>${skor}/${total}</strong> (${(skor / total * 100).toFixed(0)}%)`;
+      hasil.style.color = skor >= 3 ? "green" : "red";
+    }
+  </script>
+</body>
+
+</html>

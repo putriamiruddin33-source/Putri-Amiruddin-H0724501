@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keamanan Data dan Privasi di Internet</title>
+  <link rel="stylesheet" href="style-css/style1.css">
+  <style>
+    /* Gaya tambahan untuk kuis */
+    .quiz-container {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 30px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .quiz-container h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .quiz-question {
+      margin-bottom: 15px;
+    }
+
+    .quiz-question p {
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .quiz-btn {
+      background-color: #0078d7;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .quiz-btn:hover {
+      background-color: #005fa3;
+    }
+
+    #quiz-result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="materi-page fade-in">
+    <header class="header">
+      <h1>Keamanan Data dan Privasi di Internet</h1>
+      <p class="subhead">Mata Kuliah: Pengembangan E-Learning</p>
+    </header>
+
+    <!-- Tujuan Pembelajaran -->
+    <section class="card">
+      <h2>🎯 Tujuan Pembelajaran</h2>
+      <ul>
+        <li>Mahasiswa memahami pentingnya keamanan data dan privasi di dunia digital.</li>
+        <li>Mahasiswa mampu mengenali ancaman terhadap data pribadi di internet.</li>
+        <li>Mahasiswa dapat menerapkan langkah-langkah perlindungan data pribadi.</li>
+        <li>Mahasiswa menyadari tanggung jawab etis dalam menjaga privasi digital.</li>
+      </ul>
+    </section>
+
+    <!-- CPMK & Indikator -->
+    <section class="card">
+      <h2>📊 CPMK & Indikator</h2>
+      <p><strong>CPMK:</strong> Mahasiswa mampu menjelaskan dan menerapkan prinsip keamanan data dan privasi dalam
+        penggunaan teknologi informasi secara bertanggung jawab.</p>
+      <p><strong>Indikator Keberhasilan:</strong></p>
+      <ul>
+        <li>Dapat menjelaskan konsep dasar keamanan data dan privasi digital.</li>
+        <li>Mampu mengidentifikasi jenis ancaman siber yang umum terjadi.</li>
+        <li>Dapat menerapkan langkah-langkah pencegahan terhadap pelanggaran data pribadi.</li>
+      </ul>
+    </section>
+
+    <!-- Materi Lengkap -->
+    <section class="card">
+      <h2>📚 Materi: Keamanan Data dan Privasi di Internet</h2>
+
+      <p>
+        Di era digital saat ini, keamanan data dan privasi menjadi aspek yang sangat penting bagi setiap pengguna internet...
+      </p>
+      <!-- Materi lengkap tetap seperti versi kamu -->
+    </section>
+
+    <!-- Modul dan Video -->
+    <section class="card">
+      <h2>💻 Konten Digital Interaktif</h2>
+      <div class="pdf-viewer" style="margin-top: 20px;">
+        <embed src="modul/Academy Module in Bahasa Indonesia on Information Security and Privacy.pdf"
+          type="application/pdf" width="100%" height="600px">
+      </div>
+
+      <h2>🎬 Video Pembelajaran</h2>
+      <iframe width="100%" height="400"
+        src="https://www.youtube.com/embed/fiuhu924--M?si=iST9xcYloUrVY6gO"
+        title="Video Keamanan Data dan Privasi di Internet"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <!-- 🔹 Kuis Interaktif -->
+    <section class="card quiz-container">
+      <h2>🧠 Kuis Keamanan Data dan Privasi</h2>
+
+      <form id="quiz-form">
+        <div class="quiz-question">
+          <p>1. Apa yang dimaksud dengan keamanan data?</p>
+          <label><input type="radio" name="q1" value="a"> Upaya untuk membatasi akses internet</label>
+          <label><input type="radio" name="q1" value="b"> Langkah untuk melindungi informasi dari akses tidak sah</label>
+          <label><input type="radio" name="q1" value="c"> Proses mempublikasikan data di media sosial</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>2. Apa tujuan utama dari privasi digital?</p>
+          <label><input type="radio" name="q2" value="a"> Menyimpan semua data di cloud</label>
+          <label><input type="radio" name="q2" value="b"> Mengontrol bagaimana data pribadi dikumpulkan dan digunakan</label>
+          <label><input type="radio" name="q2" value="c"> Membagikan informasi pribadi ke publik</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>3. Contoh ancaman terhadap keamanan data adalah...</p>
+          <label><input type="radio" name="q3" value="a"> Mengganti kata sandi secara rutin</label>
+          <label><input type="radio" name="q3" value="b"> Serangan phishing melalui email palsu</label>
+          <label><input type="radio" name="q3" value="c"> Mengaktifkan autentikasi dua faktor</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>4. Mengapa kita perlu menggunakan VPN saat memakai Wi-Fi publik?</p>
+          <label><input type="radio" name="q4" value="a"> Agar koneksi lebih cepat</label>
+          <label><input type="radio" name="q4" value="b"> Untuk mengenkripsi koneksi dan melindungi data</label>
+          <label><input type="radio" name="q4" value="c"> Untuk menonaktifkan firewall</label>
+        </div>
+
+        <div class="quiz-question">
+          <p>5. Sikap etis dalam menjaga privasi orang lain adalah...</p>
+          <label><input type="radio" name="q5" value="a"> Membagikan foto teman tanpa izin</label>
+          <label><input type="radio" name="q5" value="b"> Tidak menyebarkan data pribadi orang lain</label>
+          <label><input type="radio" name="q5" value="c"> Mengakses akun orang lain untuk bercanda</label>
+        </div>
+
+        <button type="button" class="quiz-btn" onclick="cekJawaban()">Kirim Jawaban</button>
+      </form>
+
+      <div id="quiz-result"></div>
+    </section>
+
+    <!-- Navigasi -->
+    <footer class="footer-nav">
+      <a href="index.html">Kembali</a>
+    </footer>
+  </main>
+
+  <script>
+    function cekJawaban() {
+      const kunci = {
+        q1: "b",
+        q2: "b",
+        q3: "b",
+        q4: "b",
+        q5: "b"
+      };
+      let skor = 0;
+      let total = 5;
+      for (let no in kunci) {
+        const jawaban = document.querySelector(`input[name="${no}"]:checked`);
+        if (jawaban && jawaban.value === kunci[no]) {
+          skor++;
+        }
+      }
+      const hasil = document.getElementById("quiz-result");
+      hasil.innerHTML = `Nilai Anda: <strong>${skor}/${total}</strong> (${(skor / total * 100).toFixed(0)}%)`;
+      hasil.style.color = skor >= 3 ? "green" : "red";
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+/* Reset dasar */
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f5f7fa;
+  color: #1f2937;
+}
+
+/* Layout utama */
+.materi-page {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 32px;
+  color: #1e3a8a;
+  margin-bottom: 8px;
+}
+
+.subhead {
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* Kartu Materi */
+.card {
+  background: #f9fafc;
+  padding: 24px;
+  border-left: 6px solid #2563eb;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #1d4ed8;
+  margin-bottom: 16px;
+}
+
+.card ul {
+  margin-left: 20px;
+  line-height: 1.7;
+}
+
+/* Tombol */
+.btn {
+  background: #2563eb;
+  border: none;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* Video & PDF */
+.pdf-viewer {
+  margin-bottom: 24px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 420px;
+  border-radius: 10px;
+}
+
+/* Footer Navigasi */
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tambahan */
+.highlight {
+  background: #e0f2fe;
+  padding: 10px 14px;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 6px;
+  font-style: italic;
+}
